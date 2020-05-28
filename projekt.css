@@ -1,0 +1,43 @@
+#eu-map {
+	display: block;
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+}
+
+path:hover, circle:hover{
+	stroke: #9BF68E !important;
+	stroke-width: 2px;
+	stroke-linejoin: round;
+	fill: #9BF68E !important;
+	cursor: pointer;
+}
+
+#info-box{
+	display:none;
+	position: absolute;
+	top: 0px;
+	left: 0px;
+	z-index: 1;
+	background-color: #ffffff;
+	border: 2px solid #BF0A30;
+	border-radius: 5px;
+	padding: 5px;
+	font-family: arial
+}
+
+$("path, circle").hover(function(e) {
+  $('#data-info').css('display','block');
+  $('#data-info').html($(this).data('info'));
+});
+$("path, circle").mouseleave(function(e) {
+  $('#data-info').css('display','none');
+});
+$(document).mousemove(function(e) {
+  $('#data-info').css('top',e.pageY-$('#data-info').height()-30);
+  $('#data-info').css('left',e.pageX-($('data-info').width())/2);
+}).mouseover();
+
+
