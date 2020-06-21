@@ -1,0 +1,42 @@
+{% extends 'layout.html' %}
+
+{% block body %}
+<section id="middle">
+    <div class="container">
+  <div class="row justify-content-center">
+    <div class="col col-sm-8">
+  
+  
+      <p>
+     hhhh This app is for a good cause. Here we can add the description of the project and stuff. 
+  </p>
+  <p>
+    
+    {% for framework in framework %}
+    <h3>{{framework}}</h3>
+ {% endfor %}
+
+  </p>
+
+  <p>
+    
+    {% for name in myframe %}
+    <h3>Name: {{name}}</h3>
+ {% endfor %}
+
+  </p>
+
+  <p>
+    
+    {% for item in myframe2 %}
+    <h3>Name: {{myframe2[1]}}</h3>
+ {% endfor %}
+
+  </p>
+      </div>
+  
+    </div>
+  </div>
+  </section>
+    </div>
+{% endblock %}
