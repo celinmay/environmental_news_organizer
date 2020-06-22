@@ -1,10 +1,29 @@
 {% extends 'layout.html' %}
 
 {% block body %}
-    <h1>Countries</h1>
-    <ul class="list-group"></ul>
-        {% for country in countries %}
-            <li class="list-group-item"><a href="country/{{country.id}}">{{country.title}}</a></li>
-        {% endfor %}
-    </ul>
+<section id="middle">
+    <div class="container">
+  <div class="row justify-content-center">
+    <div class="col col-sm-6">
+       <p>
+
+
+
+     {% for item in myframe1 %}
+    <h3>Problem: {{item|england}}</h3>
+     {% endfor %}
+       </p>
+    </div>
+    <div class="col col-sm-6">
+     <p>
+        {% for item in myframe2 %}
+    <h3>Count: {{item|striptags|title}}</h3>
+         {% endfor %}
+    </p>
+      </div>
+  
+    </div>
+  </div>
+  </section>
+    </div>
 {% endblock %}
