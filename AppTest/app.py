@@ -3,35 +3,59 @@ from flask_pymongo import PyMongo
 from pymongo import MongoClient
 
 #insert DATABASE CODE HERE
-client = MongoClient("mongodb+srv://user01:user01@cluster0-ujqto.mongodb.net/apptest?retryWrites=true&w=majority")
-db = client.get_database("apptest")
-frameworks = db.frameworks
+client = MongoClient("mongodb+srv://environmental:environmental@cluster0-jq5lb.mongodb.net/<dbname>?retryWrites=true&w=majority")
+db = client.get_database("environmental_db")
+countries = db.theme_result_count
 
 app = Flask(__name__)
 
-app.config['MONGO_DBNAME'] = 'apptest'
-app.config['MONGO_URI'] = 'mongodb+srv://user01:user01@cluster0-ujqto.mongodb.net/apptest?retryWrites=true&w=majority'
+app.config['MONGO_DBNAME'] = 'environmental_db'
+app.config['MONGO_URI'] = 'mongodb+srv://environmental:environmental@cluster0-jq5lb.mongodb.net/<dbname>?retryWrites=true&w=majority'
  #collection name
 mongo = PyMongo(app)
-
 
 @app.route('/')
 def index():
     return render_template('home.html')
 
-@app.route('/example', methods=["GET"])
-def framework(): 
-    frame = []
-    for q in frameworks.find():
-        frame.append({'name' : q['name'], 'language' : q['language']})
-
-    frame2 = []
-    for q in frameworks.find():
-        frame2.append(q['name'])
-
-    return render_template('example.html', myframe=frame, myframe2=frame2)
+@app.route('/countries', methods=["GET"])
+def country(): 
+    frame1 = []
+    for q in countries.find(): 
+        frame1.append({q['ID'], q['value']})
     
+    frame2 = []
+    for q in countries.find():
+        frame2.append(q['value'])
+    print(q)
+    return render_template('countries.html', myframe1=frame1, myframe2=frame2)
+    
+@app.route('/germany', methods=["GET"])
+def germany(): 
+        
+    germany01 = []
+    for q in countries.find():
+        germany01.append(q['value'])
+    print(q)
+    return render_template('germany.html', listgermany=germany01)
 
+@app.route('/england', methods=["GET"])
+def england(): 
+        
+    england01 = []
+    for q in countries.find():
+        england01.append(q['value'])
+    print(q)
+    return render_template('england.html', listengland=england01)
+
+@app.route('/denmark', methods=["GET"])
+def denmark(): 
+        
+    denmark01 = []
+    for q in countries.find():
+        denmark01.append(q['value'])
+    print(q)
+    return render_template('denmark.html', listdenmark=denmark01)
 
 #@app.route('/about', methods=['GET'])
 # def get_all_frameworks():
