@@ -1,18 +1,28 @@
 <!DOCTYPE html>
-<html>
+<html lang="en" dir="ltr">
 <head>
-	<title>Environmental News Organizer</title>
-
-	<link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+	<link href="https://fonts.googleapis.com/css2?family=Dosis&display=swap" rel="stylesheet">
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
 	<link rel="stylesheet" type="text/css" href="http://celinmay.com/projekt.css">
-
+	<script type="text/javascript" src="PROJEKTNY.js"></script>
+	<script  src="https://code.jquery.com/jquery-3.5.1.js"
+			  integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc="
+			  crossorigin="anonymous"></script>
+	<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+	<title>Environmental News Organizer</title>
 </head>
+
 <body>
+	
+
     {% include 'includes/_navbar.html' %}
     {% block body%}{% endblock %}
 
     <script type="text/javascript" src="/projekt.js"></script>
 	<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
-
+	<script>
+	$('#GB').click(function() {
+		$('#england').show();
+	  });</script>
 </body>
 </html>
