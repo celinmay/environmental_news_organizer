@@ -112,32 +112,6 @@ def greece():
         greece01.append(q['value'])
     print(q)
     return render_template('greece.html', listgreece=greece01)
-#@app.route('/about', methods=['GET'])
-# def get_all_frameworks():
-#    return render_template('/about.html', name = "Celin")
-
-# @app.route('/framework/<name>', methods=['GET'])
-# def get_one_framework(name):
-#     framework = mongo.db.frameworks 
-
-#     q = framework.find_one({'name' : name})
-#     output = {'name' : q['name'], 'language' : q['language']}
-
-#     return jsonify({'result' : output})
-
-# @app.route('/framework', methods=['POST'])
-# def add_framework():
-#     framework = mongo.db.frameworks 
-
-#     name = request.json['name']
-#     language = request.json['language']
-
-#     framework_id = framework.insert({'name' : name, 'language' : language})
-#     new_framework = framework.find_one({'_id' : framework_id})
-
-#     output = {'name' : new_framework['name'], 'language' : new_framework['language']}
-
-#     return jsonify({'result' : output})
 
 
 
